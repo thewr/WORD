@@ -16,11 +16,10 @@ Description:  Create linked list class plus node structure character.  supply it
 using namespace std;
 
 
-
-// Name: Length
-// Precondition:  constructor called and list is initialized 
-// Postcondition:  number of elements in list returned
-// Descriton:	member function of WORD that returns an integer which is the number of elements inside list.
+/** Name: Length
+** Precondition:  constructor called and list is initialized 
+** Postcondition:  number of elements in list returned
+** Descriton:	member function of WORD that returns an integer which is the number of elements inside list.*/
 int WORD::Length()
 {
 	if (front == 0)
@@ -42,21 +41,20 @@ int WORD::Length()
 
 }
 
-
-// Name: Default Constructor
-// Precondition:  Constructor object created 
-// Postcondition:  private member values of WORD class are passed by value.
-// Description:  intializes both front and back of list to point to NULL.
+/* Name: Default Constructor
+** Precondition:  Constructor object created 
+** Postcondition:  private member values of WORD class are passed by value.
+** Description:  intializes both front and back of list to point to NULL.*/
 WORD::WORD() 
 {
 	cout << "Default Constructor Evoked!\n";
 	front = back = 0;
 }
 
-// Name: Deconstructor
-// Precondition: Contructor called (default, copy, explicit) i.e. memory allocated to data structure
-// Postcondition:  de-allocation of memory to data structure 
-// Description:  removes potential memory leaks and spoke problems by releasing memory at close of program.
+/* Name: Deconstructor
+** Precondition: Contructor called (default, copy, explicit) i.e. memory allocated to data structure
+** Postcondition:  de-allocation of memory to data structure 
+** Description:  removes potential memory leaks and spoke problems by releasing memory at close of program.  */
 WORD::~WORD()
 {
 	cout << "Destructor Evoked!\n";
@@ -70,11 +68,10 @@ WORD::~WORD()
 
 }
 
-// Name: Explicit Value Constructor
-// Precondition: constructor called.  string function for class WORD tested and operating.
-// Postcondition:  string is stored inside data structure as a linked list.
-// Description:  allocates memory for string called explicitly inside constructor.
-//
+/* Name: Explicit Value Constructor
+** Precondition: constructor called.  string function for class WORD tested and operating.
+** Postcondition:  string is stored inside data structure as a linked list.
+** Description:  allocates memory for string called explicitly inside constructor.  */
 WORD::WORD(const string & s)
 {
 	cout << "Explicit Value Constructor Evoked!" << endl;
@@ -98,11 +95,10 @@ WORD::WORD(const string & s)
 	p->next = 0;
 }
 
-
-// Name: Print()
-// Precondition: constructor called and something or nothing is contained inside linked list.
-// Postcondition:  char symbol is passed to cout until terminal node is met.
-// Description:  prints the contents of the linked list to screen.
+/* Name: Print()
+** Precondition: constructor called and something or nothing is contained inside linked list.
+** Postcondition:  char symbol is passed to cout until terminal node is met.
+** Description:  prints the contents of the linked list to screen.  */
 void WORD::Print()//accessor
 {
 	character *p = front;
@@ -118,11 +114,10 @@ void WORD::Print()//accessor
     cout<<endl<<endl;
 }
 
-
-// Name: Insert_Front
-// Precondition: constructor evoked.  a word has been stored.
-// Postcondition: node character added to the front of list with input char key 
-// Description:  inserts a new character to the front of the word stored.
+/* Name: Insert_Front
+** Precondition: constructor evoked.  a word has been stored.
+** Postcondition: node character added to the front of list with input char key 
+** Description:  inserts a new character to the front of the word stored.   */
 void WORD::Insert_Front(const char & key)
 	
 {
@@ -145,11 +140,10 @@ void WORD::Insert_Front(const char & key)
 }
 
 
-// Name: Insert_Back
-// Precondition: constructor evoked.  a word has been stored.
-// Postcondition: node character added to the back of list with input char key 
-// Description:  inserts a new character to back front of the word stored.
-
+/* Name: Insert_Back
+** Precondition: constructor evoked.  a word has been stored.
+** Postcondition: node character added to the back of list with input char key 
+** Description:  inserts a new character to back front of the word stored.     */
 void WORD::Insert_Back(const char & key)
 {	
 	character *p = new character;
@@ -178,11 +172,10 @@ void WORD::Insert_Back(const char & key)
 
 }
 
-// Name: character* WORD Search
-// Precondition: constructor evoked.  a word has been stored.
-// Postcondition:  returns index of char key node's location.
-// Description:  used to search for node index of a character.
-
+/* Name: character* WORD Search
+** Precondition: constructor evoked.  a word has been stored.
+** Postcondition:  returns index of char key node's location.
+** Description:  used to search for node index of a character. */
 character* WORD::Search(const char & key)
 {
 	character *p = front;  // list node to front
@@ -199,11 +192,10 @@ character* WORD::Search(const char & key)
 
 }
 
-// Name: void Remove
-// Precondition: word stored in constructor.  Search function operating.
-// Postcondition:  node of the key word returned by search is removed.
-// Description:  deletes a character from the word.
-
+/* Name: void Remove
+** Precondition: word stored in constructor.  Search function operating.
+** Postcondition:  node of the key word returned by search is removed.
+** Description:  deletes a character from the word.  */
 void WORD::Remove(const char & key)
 {
 	character* p = Search(key);   // find location of item to remove
@@ -242,11 +234,10 @@ void WORD::Remove(const char & key)
 	}
 }
 
-
-// Name: operator<< overloading
-// Precondition: word stored in constructor object wordObj.
-// Postcondition:  wordObj passed to cout returns contents of the array.
-// Description:  displays contents of wordObj when using std::cout.
+/* Name: operator<< overloading
+** Precondition: word stored in constructor object wordObj.
+** Postcondition:  wordObj passed to cout returns contents of the array.
+** Description:  displays contents of wordObj when using std::cout. */
 ostream & operator<<(ostream & out, const WORD & wordObj)
 {
 	character *p = wordObj.front;
@@ -259,11 +250,10 @@ ostream & operator<<(ostream & out, const WORD & wordObj)
 	return out;
 }
 
-
-// Name: Copy Constructor
-// Precondition:  original word stored in linked list data structor via constructor evoke.  
-// Postcondition:  contents of original word is passed into newly created wordObj when both are set equal.
-// Description:  allows for new word object to be given content of another.  i.e. objA = "XYZ", objB = objA; 
+/* Name: Copy Constructor
+** Precondition:  original word stored in linked list data structor via constructor evoke.  
+** Postcondition:  contents of original word is passed into newly created wordObj when both are set equal.
+** Description:  allows for new word object to be given content of another.  i.e. objA = "XYZ", objB = objA;  */
 WORD::WORD(const WORD & org)
 {
 	cout << "Copy Constructor Evoked!" << endl;
@@ -304,10 +294,10 @@ WORD::WORD(const WORD & org)
 }
 
 
-// Name: operator= overloading
-// Precondition: constructor called for object. object set equal to string in word_driver.cpp
-// Postcondition:  stores the string passed into object into it's linked list structure.
-// Description: calls = operator to set object equal to string.  stores string.                
+/* Name: operator= overloading
+** Precondition: constructor called for object. object set equal to string in word_driver.cpp
+** Postcondition:  stores the string passed into object into it's linked list structure.
+** Description: calls = operator to set object equal to string.  stores string.    */            
 void WORD::operator=(const string & s)
 {
 	cout << "Overload = Evoked!" << endl;
@@ -331,10 +321,10 @@ void WORD::operator=(const string & s)
 	p->next = 0;
 }
 
-// Name: bool IsEqual
-// Precondition: constructor called for WORD A and B
-// Postcondition:  bool set to true is equal otherwise false
-// Description:  arguments to determine whether two strings are the same.
+/* Name: bool IsEqual
+** Precondition: constructor called for WORD A and B
+** Postcondition:  bool set to true is equal otherwise false
+** Description:  arguments to determine whether two strings are the same.  */
 bool WORD::IsEqual(const WORD & B) 
 {
 	character *p = new character;  // ptr for wordObjA
@@ -356,10 +346,10 @@ bool WORD::IsEqual(const WORD & B)
 }  // returns true if the two word objects are equal; otherwise false
 
 
-// Name: overload operator(+)
-// Precondition: constructor called for WORD A.  Operator(+) before B. 
-// Postcondition:  WORD B is copied to the back of WORD A.
-// Description:  overload + constructor to "paste" strings.
+/* Name: overload operator(+)
+** Precondition: constructor called for WORD A.  Operator(+) before B. 
+** Postcondition:  WORD B is copied to the back of WORD A.
+** Description:  overload + constructor to "paste" strings. */
 void WORD::operator+(const WORD & B)
 {
 	character *p = B.front;  // point to front of string B
