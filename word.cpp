@@ -17,7 +17,7 @@ using namespace std;
 
 
 
-// Name:  Length
+// Name: Length
 // Precondition:  constructor called and list is initialized 
 // Postcondition:  number of elements in list returned
 // Descriton:	member function of WORD that returns an integer which is the number of elements inside list.
@@ -43,7 +43,7 @@ int WORD::Length()
 }
 
 
-// Name:  Default Constructor
+// Name: Default Constructor
 // Precondition:  Constructor object created 
 // Postcondition:  private member values of WORD class are passed by value.
 // Description:  intializes both front and back of list to point to NULL.
@@ -53,11 +53,10 @@ WORD::WORD()
 	front = back = 0;
 }
 
-// Name:  Deconstructor
+// Name: Deconstructor
 // Precondition: Contructor called (default, copy, explicit) i.e. memory allocated to data structure
 // Postcondition:  de-allocation of memory to data structure 
 // Description:  removes potential memory leaks and spoke problems by releasing memory at close of program.
-//
 WORD::~WORD()
 {
 	cout << "Destructor Evoked!\n";
@@ -100,11 +99,10 @@ WORD::WORD(const string & s)
 }
 
 
-// Name: void Print()
+// Name: Print()
 // Precondition: constructor called and something or nothing is contained inside linked list.
 // Postcondition:  char symbol is passed to cout until terminal node is met.
 // Description:  prints the contents of the linked list to screen.
-//
 void WORD::Print()//accessor
 {
 	character *p = front;
@@ -121,12 +119,12 @@ void WORD::Print()//accessor
 }
 
 
-// Name: void Insert_Front
+// Name: Insert_Front
 // Precondition: constructor evoked.  a word has been stored.
 // Postcondition: node character added to the front of list with input char key 
 // Description:  inserts a new character to the front of the word stored.
-//
 void WORD::Insert_Front(const char & key)
+	
 {
 	character *p = new character;
 
@@ -147,11 +145,11 @@ void WORD::Insert_Front(const char & key)
 }
 
 
-// Name: void Insert_Back
+// Name: Insert_Back
 // Precondition: constructor evoked.  a word has been stored.
 // Postcondition: node character added to the back of list with input char key 
 // Description:  inserts a new character to back front of the word stored.
-//
+
 void WORD::Insert_Back(const char & key)
 {	
 	character *p = new character;
@@ -180,14 +178,11 @@ void WORD::Insert_Back(const char & key)
 
 }
 
-
-
-
 // Name: character* WORD Search
 // Precondition: constructor evoked.  a word has been stored.
 // Postcondition:  returns index of char key node's location.
 // Description:  used to search for node index of a character.
-//
+
 character* WORD::Search(const char & key)
 {
 	character *p = front;  // list node to front
