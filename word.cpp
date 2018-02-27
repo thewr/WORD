@@ -1,11 +1,5 @@
 //WORD.CPP
 /********************************************************************************************
-Name: Ryan Thew   Z#:15156390
-Course: Date Structures and Algorithm Analysis (COP3530)
-Professor: Dr. Lofton Bullard
-Due Date: Due Time: 11:59 PM
-Total Points: 25
-Assignment 5: Linked List
 Description:  Create linked list class plus node structure character.  supply it functions.
 *********************************************************************************************/
 
