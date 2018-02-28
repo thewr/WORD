@@ -1,19 +1,15 @@
-
-//WORD_HEADER
-/********************************************************************************************
-Assignment 5: Linked List
-Description:  Create linked list class plus node structure character.  supply it functions.
+//------------------------------------------------------------------------------------------
+// File: word.h
+//------------------------------------------------------------------------------------------
+// Assignment 5: Linked List
+// Description:  Create linked list class plus node structure character.  supply it functions.
 *********************************************************************************************/
-
+#ifndef word_h
+#define word_h
 #include <iostream>
 #include <string>
 #include <iomanip>
-
-using namespace std;
-
-#ifndef word_h
-#define word_h
-
+	
 /* DEFINE ASCII SYMBOLS FOR DRAW */
 #define VRT   186   // ║
 #define HRZ2  205   // ═
